@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100;1,200;1,400;1,500&display=swap');
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+body {
+    background-color: #fff;
+}
+
+section {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 5%;
+}
+
+header .logo a {
+    font-size: 25px;
+    color: rgb(89, 16, 134);
+}
+
+header .logo a span {
+    color: #111;
+}
+
+/* Add the following styles */
+.Menu {
+display: flex;
+list-style: none;
+font-size: 15px;
+}
+
+.Menu li {
+position: relative;
+margin: 0 15px; /* Ajoute un espace horizontal de 15px entre les éléments du menu */
+}
+
+.Menu li::after {
+content: "";
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: transparent;
+transition: width 0.3s;
+}
+
+.Menu li:hover::after {
+width: 0%;
+background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
+}
+
+.menu-item {
+position: relative;
+}
+
+.menu-item:hover {
+color: #000;
+text-decoration: underline;
+}
+
+.menu-item::before {
+content: "";
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 100%;
+height: 2px;
+background-color: transparent;
+
+}
+
+.menu-item:hover::before {
+transform: scaleX(1);
+background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
+}
+
+
+.btn-reservation {
+    color: rgb(109, 39, 174);
+    font-size: 14px;
+    border: 2px solid rgb(89, 16, 134);
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.btn-reservation:hover {
+    background-color: rgb(89, 16, 134);
+    color: #ccc;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.btn-sign {
+    color: rgb(109, 39, 174);
+    font-size: 14px;
+    border: 2px solid rgb(89, 16, 134);
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.btn-sign:hover {
+    background-color: rgb(89, 16, 134);
+    color: #ccc;
+    font-weight: bold;
+}
+
+.btn-info {
+    color: rgb(109, 39, 174);
+    font-size: 14px;
+    border: 2px solid rgb(89, 16, 134);
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.btn-info:hover {
+    background-color: rgb(89, 16, 134);
+    color: #ccc;
+    font-weight: bold;
+}
+
+#Home {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: left;
+    padding: 0 5%;
+    backdrop-filter: blur(5px); /* Add blur effect */
+}
+
+#Home h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#Home p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.home-btn {
+    margin-top: 20px;
+}
+.elementor-widget-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.elementor-image {
+    float: right;
+    width: 50%; /* Ajuste la largeur de l'image à droite */
+    height: auto;
+    margin-left: 30%;
+}
+
+.elementor-widget-container .elementor-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    border: 2px solid rgb(89, 16, 134, .5);
+    display: none; /* Start with the login box hidden */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Add blur effect */
+    z-index: 999; /* Set z-index to be above the blurred content */
+    transition: height .2s ease;
+}
+.wrapper.active{
+    height: 520px;
+}
+.wrapper.hide{
+    display: none;
+}
+/* Add this class to show the login box */
+.wrapper.show {
+    display: flex;
+}
+.wrapper .form-box .login{
+    display: none;
+}
+.wrapper.active .form-box .login{
+   transition: none;
+   transform: translateX(400px);
+}
+.wrapper .form-box {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.388);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.wrapper .form-box.hide {
+display: none;
+}
+
+.wrapper .form-box.show {
+display: block;
+opacity: 1;
+transform: translateY(0);
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.form-box h2{
+    font-size: 2em;
+    color: rgb(89, 16, 134, .5);
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(89, 16, 134, .5);
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: rgb(89, 16, 134, .5);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #111;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.remember-forgot{
+    font-size: .9em;
+    color: #111;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot label input{
+    accent-color: #111;
+    margin-right: 3px;
+    text-align: center ;
+}
+.remember-forgot a{
+    text-decoration: none;
+}
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+.btn {
+    width: 100%;
+    height: 45px;
+    background: rgb(89, 16, 134);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.login-register {
+    font-size: .9em;
+    color: #111;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p{
+    text-align: center;
+}
+.login-register p a{
+    text-decoration: none;
+}
+.login-register p a:hover {
+    text-decoration: underline;
+}
+.main-container {
+  text-align: left; /* Aligne le contenu du container à droite */
+  margin-left: 60px; /* Déplace le container de 20 pixels vers la droite */
+}
+.main-container .widget-content {
+  font-size: 30px; /* Ajustez la taille de police selon vos préférences */
+}
+.main-container.elementor-heading-title.elementor-size-default {
+  color: orange; /* Modifie la couleur du texte en orange */
+}
+
+.main-container .widget-heading.default-size {
+    text-align: left;
+}
+
+.widget-heading.default-size {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+  </style>
+  <title>Aeroport</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html" class="menu-item">ASFAR <span>Aereport</span></a>
+    </div>
+    <ul class="Menu">
+      <li><a href="#" class="menu-item">Flights</a></li>
+      <li><a href="#" class="menu-item">Tickets</a></li>
+      <li><a href="#" class="menu-item">About us</a></li>
+      <li><a href="#" class="menu-item">Contact</a></li>
+    </ul>
+    <div>
+      <a href="#" class="btn-reservation">Book your flight</a>
+      <a href="#" class="btn-sign" id="signup-button">
+        <span class="elementor-button-content-wrapper">
+          <span class="elementor-button-text">Sign Up</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <section id="Home">
+    <div>
+        <h2>Flight Access: Your Gate to Travel</h2>
+        <p>ASFAR Aeroport, the ultimate passenger-oriented website,</p>
+        <p>simplifies your travel experience by providing gate access information for your preferred airline and
+            flight.</p>
+        <a href="#" class="btn-info home-btn">More informations</a>
+    </div>
+    <div class="elementor-widget-container">
+        <div class="elementor-image">
+            <img src="https://previews.123rf.com/images/lucadp/lucadp1510/lucadp151000056/47531254-tablet-pc-avec-une-application-de-r%C3%A9servation-de-vol-un-passeport-et-un-petit-avion-sur-fond-blanc.jpg"
+                class="attachment-full size-full wp-image-66419" alt="" loading="lazy">
+        </div>
+    </div>
+  </section>
+
+
+    <div class="main-container full-width flex-container" data-id="19cfb21" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+        <div class="widget-container animated fadeIn" data-id="8442080" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
+            <div class="widget-content">
+                <h4 class="widget-heading default-size">4.8</h4>
+            </div>
+        </div>
+        <div class="widget-container animated pulse" data-id="2d94c76" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;pulse&quot;}" data-widget_type="heading.default">
+            <div class="widget-content">
+                <h6 class="widget-heading default-size">★★★★★</h6>
+            </div>
+        </div>
+        <div class="widget-container" data-id="4ca12fc" data-element_type="widget" data-widget_type="heading.default">
+            <div class="widget-content">
+                <h6 class="widget-heading default-size">2,394 Ratings</h6>
+            </div>
+        </div>
+        <div class="widget-container" data-id="0240f2c" data-element_type="widget" data-widget_type="heading.default">
+            <div class="widget-content">
+                <h6 class="widget-heading default-size">Google Reviews</h6>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+<script>
+const signupButton = document.getElementById("signup-button");
+const loginBox = document.getElementById("login-box");
+const registerBox = document.getElementById("register-box");
+
+signupButton.addEventListener("click", () => {
+  loginBox.classList.add("hide");
+  registerBox.classList.remove("hide");
+  document.getElementById("Home").style.filter = "blur(5px)";
+  document.body.style.overflow = "hidden";
+});
+
+const registerLink = document.querySelector(".register-link");
+registerLink.addEventListener('click', () => {
+  loginBox.classList.remove("hide");
+  registerBox.classList.add("hide");
+  document.getElementById("Home").style.filter = "none";
+  document.body.style.overflow = "auto";
+});
+</script>
+</body>
+</html>
