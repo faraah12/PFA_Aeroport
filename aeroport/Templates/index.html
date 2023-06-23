@@ -444,18 +444,36 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     font-weight: bold;
     margin-left: 10px;
 }
-.container-3{
-     display: flex;
-     justify-content: space-around; /* or flex-start */
-     align-items: center;
+.container-3 {
+  display: flex;
+  align-items: right;
 }
-.img1{
-    height: 50%;
-    width: 30%;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+
+.text-container {
+  width: 60%;
+  margin-left: 20px;
+  font-size: 18px;
+  flex: 1 1 auto;
 }
+.image{
+    flex: 0 0 auto;
+}
+
+.img2 {
+  height: 80%;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.img3 {
+  height: 80%;
+  width: 30%;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+
+
   </style>
   <title>Aeroport</title>
 </head>
@@ -522,9 +540,13 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     </a>
 </div>
 <div class="container-3">
-    <img src="https://media.gettyimages.com/id/1421871689/fr/vectoriel/porte-sur-la%C3%A9roport.webp?s=612x612&w=gi&k=20&c=YWGXiRMtg7eDfd_jEWrptONeaDlwSbyJL0e9CKCGVKo=" class="img1" alt="" loading="lazy"></div>
-    <img src="https://media.istockphoto.com/id/516448058/vector/europe-airport-digital-boarding.jpg?s=1024x1024&w=is&k=20&c=HuxaCoBFHbr5A-R4NljhCR_l7R1rxfedfS4O9N9TVPA=" class="img1" alt="" loading="lazy"></div>
-    <img src="" class="img1" alt="https://www.istockphoto.com/photo/ground-staff-assisting-family-at-checkin-counter-during-pandemic-gm1329697956-413346058?phrase=airline+service" loading="lazy"></div>
+    <div class="image">
+    <img src="https://media.istockphoto.com/id/516448058/vector/europe-airport-digital-boarding.jpg?s=1024x1024&w=is&k=20&c=HuxaCoBFHbr5A-R4NljhCR_l7R1rxfedfS4O9N9TVPA=" class="img2" alt="" loading="lazy"></div></div>
+    <div class="text-container">
+    <p>Bienvenue à notre compagnie aérienne. Nous sommes ravis de vous présenter les informations de vol les plus récentes. Que vous voyagiez pour affaires ou pour le plaisir, nous sommes là pour vous fournir des vols sûrs et confortables vers de nombreuses destinations passionnantes à travers le monde.
+
+        Notre équipe dévouée travaille sans relâche pour assurer des départs et des arrivées ponctuels. Nous mettons à votre disposition des informations détaillées sur les horaires de vol, les numéros de porte, les retards éventuels et les informations de suivi des bagages. Grâce à notre système de gestion des vols en temps réel, vous pouvez être assuré d'être informé rapidement de tout changement ou mise à jour concernant votre vol.</p></div>
+    <img src="https://cdn.businesstraveller.com/wp-content/uploads/2017/09/%E6%96%B0%E8%81%9E%E7%85%A7.jpg" class ="img3"loading="lazy"></div>
 
 </div>
 </div>
