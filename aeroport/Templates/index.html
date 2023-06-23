@@ -131,20 +131,6 @@ background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
     margin-left: 10px;
 }
 
-.btn-sign {
-    color: rgb(109, 39, 174);
-    font-size: 14px;
-    border: 2px solid rgb(89, 16, 134);
-    padding: 5px 20px;
-    transition: 0.5s;
-}
-
-.btn-sign:hover {
-    background-color: rgb(89, 16, 134);
-    color: #ccc;
-    font-weight: bold;
-}
-
 .btn-info {
     color: rgb(109, 39, 174);
     font-size: 14px;
@@ -169,6 +155,7 @@ background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
     text-align: left;
     padding: 0 5%;
     backdrop-filter: blur(5px); /* Add blur effect */
+    width: 100%;
 }
 
 #Home h2 {
@@ -364,9 +351,111 @@ transition: opacity 0.3s ease, transform 0.3s ease;
   color: #333;
   font-weight: bold;
 }
+.e-con-boxed {
+  display: flex;
+}
+
+.e-con-full {
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around; /* or flex-start */
+  align-items: center;
+  font-size: 16px;
+}
 
 
 
+.rating {
+  text-align: center;
+  
+}
+
+.score {
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-family: "Poppins", Sans-serif;
+}
+
+.stars {
+  font-size: 18px;
+  font-weight: bold;
+  color: #F0AD4E;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratings-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.google-ratings, .bbb-ratings {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.google-count, .bbb-count {
+  font-size: 14px;
+}
+.testimonial-text{
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.testimonial-author{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(89, 16, 134);
+    margin-bottom: 20px;
+}
+.container-2{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  font-size: 16px;
+}
+.our-services{
+     font-size: 40px;
+     font-weight: bold;
+     margin-bottom: 20px;
+}
+.elementor-button-text{
+    color: rgb(109, 39, 174);
+    font-size: 14px;
+    border: 2px solid rgb(89, 16, 134);
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.elementor-button-text:hover {
+    background-color: rgb(89, 16, 134);
+    color: #ccc;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.container-3{
+     display: flex;
+     justify-content: space-around; /* or flex-start */
+     align-items: center;
+}
+.img1{
+    height: 50%;
+    width: 30%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
   </style>
   <title>Aeroport</title>
 </head>
@@ -384,11 +473,6 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     </ul>
     <div>
       <a href="#" class="btn-reservation">Book your flight</a>
-      <a href="#" class="btn-sign" id="signup-button">
-        <span class="elementor-button-content-wrapper">
-          <span class="elementor-button-text">Sign Up</span>
-        </span>
-      </a>
     </div>
   </header>
 
@@ -407,33 +491,43 @@ transition: opacity 0.3s ease, transform 0.3s ease;
         </div>
     </div>
   </section>
-
-
-    <div class="main-container full-width flex-container" data-id="19cfb21" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-        <div class="widget-container animated fadeIn" data-id="8442080" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="heading.default">
-            <div class="widget-content">
-                <h4 class="widget-heading default-size">4.8</h4>
-            </div>
-        </div>
-        <div class="widget-container animated pulse" data-id="2d94c76" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;pulse&quot;}" data-widget_type="heading.default">
-            <div class="widget-content">
-                <h6 class="widget-heading default-size">★★★★★</h6>
-            </div>
-        </div>
-        <div class="widget-container" data-id="4ca12fc" data-element_type="widget" data-widget_type="heading.default">
-            <div class="widget-content">
-                <h6 class="widget-heading default-size">2,394 Ratings</h6>
-            </div>
-        </div>
-        <div class="widget-container" data-id="0240f2c" data-element_type="widget" data-widget_type="heading.default">
-            <div class="widget-content">
-                <h6 class="widget-heading default-size">Google Reviews</h6>
-            </div>
-        </div>
+  <div class="container">
+    <div class="rating">
+      <div class="score">4.8</div>
+      <div class="stars">★★★★★</div>
+      <div class="google-count">2,394 Ratings</div>
+      <div class="google-reviews">Google Reviews</div>
     </div>
-
-
+    <div class="reviews">
+      <div class="bbb-ratings">A+</div>
+      <div class="stars">★★★★★</div>
+      <div class="bbb-count">125 Reviews</div>
+      <div class="bbb-rating">BBB Rating</div>
     </div>
+    <div class="testimonial">
+      <div class="testimonial-text">Trusted by numerous Airline passengers</div>
+      <div class="testimonial-author">Jessica Simon</div>
+      <div class="testimonial-review">
+        <p>I found this website to be incredibly helpful in providing me with all the necessary information for my flight,</p>
+        <p>making my travel experience that much smoother.</p></div>
+    </div>
+  </div>
+  
+<div class="container-2">
+    <div class="our-services">Our services</div>
+    <a href="" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+        <span class="elementor-button-content-wrapper">
+        <span class="elementor-button-text">View All Services</span>
+</span>
+    </a>
+</div>
+<div class="container-3">
+    <img src="https://media.gettyimages.com/id/1421871689/fr/vectoriel/porte-sur-la%C3%A9roport.webp?s=612x612&w=gi&k=20&c=YWGXiRMtg7eDfd_jEWrptONeaDlwSbyJL0e9CKCGVKo=" class="img1" alt="" loading="lazy"></div>
+    <img src="https://media.istockphoto.com/id/516448058/vector/europe-airport-digital-boarding.jpg?s=1024x1024&w=is&k=20&c=HuxaCoBFHbr5A-R4NljhCR_l7R1rxfedfS4O9N9TVPA=" class="img1" alt="" loading="lazy"></div>
+    <img src="" class="img1" alt="https://www.istockphoto.com/photo/ground-staff-assisting-family-at-checkin-counter-during-pandemic-gm1329697956-413346058?phrase=airline+service" loading="lazy"></div>
+
+</div>
+</div>
 <script>
 const signupButton = document.getElementById("signup-button");
 const loginBox = document.getElementById("login-box");
