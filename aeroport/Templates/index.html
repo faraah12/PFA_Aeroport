@@ -204,23 +204,6 @@ background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
     z-index: 999; /* Set z-index to be above the blurred content */
     transition: height .2s ease;
 }
-.wrapper.active{
-    height: 520px;
-}
-.wrapper.hide{
-    display: none;
-}
-/* Add this class to show the login box */
-.wrapper.show {
-    display: flex;
-}
-.wrapper .form-box .login{
-    display: none;
-}
-.wrapper.active .form-box .login{
-   transition: none;
-   transform: translateX(400px);
-}
 .wrapper .form-box {
     position: relative;
     width: 400px;
@@ -247,61 +230,6 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     font-size: 2em;
     color: rgb(89, 16, 134, .5);
     text-align: center;
-}
-
-.input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid rgb(89, 16, 134, .5);
-    margin: 30px 0;
-}
-
-.input-box label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: rgb(89, 16, 134, .5);
-    font-weight: 500;
-    pointer-events: none;
-    transition: .5s;
-}
-.input-box input:focus~label,
-.input-box input:valid~label {
-    top: -5px;
-}
-
-.input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #111;
-    font-weight: 600;
-    padding: 0 35px 0 5px;
-}
-.remember-forgot{
-    font-size: .9em;
-    color: #111;
-    font-weight: 500;
-    margin: -15px 0 15px;
-    display: flex;
-    justify-content: space-between;
-}
-.remember-forgot label input{
-    accent-color: #111;
-    margin-right: 3px;
-    text-align: center ;
-}
-.remember-forgot a{
-    text-decoration: none;
-}
-.remember-forgot a:hover {
-    text-decoration: underline;
 }
 .btn {
     width: 100%;
@@ -444,22 +372,40 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     font-weight: bold;
     margin-left: 10px;
 }
-.container-3 {
+
+#container-3 {
+  height: calc(100vh - 50px);
   display: flex;
-  align-items: right;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 0 5%;
 }
 
-.text-container {
+#text-container {
   width: 60%;
+  margin-bottom: 20px;
   margin-left: 20px;
+  margin-right: 20px;
   font-size: 18px;
   flex: 1 1 auto;
 }
-.image{
-    flex: 0 0 auto;
+
+.text-container p {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .img2 {
+  float: right;
   height: 80%;
   width: 30%;
   margin-right: 20px;
@@ -471,6 +417,39 @@ transition: opacity 0.3s ease, transform 0.3s ease;
   margin-bottom: 40px;
   margin-top: 40px;
 }
+.text-container{
+  width: 60%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+  flex: 1 1 auto;
+}
+.text-container2 {
+  width: 60%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+  flex: 1 1 auto;
+}
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1px;
+  background-color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.line-text {
+  background-color: white;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 
 
 
@@ -541,15 +520,114 @@ transition: opacity 0.3s ease, transform 0.3s ease;
 </div>
 <div class="container-3">
     <div class="image">
-    <img src="https://media.istockphoto.com/id/516448058/vector/europe-airport-digital-boarding.jpg?s=1024x1024&w=is&k=20&c=HuxaCoBFHbr5A-R4NljhCR_l7R1rxfedfS4O9N9TVPA=" class="img2" alt="" loading="lazy"></div></div>
+      <img src="https://media.istockphoto.com/id/516448058/vector/europe-airport-digital-boarding.jpg?s=1024x1024&w=is&k=20&c=HuxaCoBFHbr5A-R4NljhCR_l7R1rxfedfS4O9N9TVPA=" class="img2" alt="" loading="lazy">
+    </div>
     <div class="text-container">
-    <p>Bienvenue à notre compagnie aérienne. Nous sommes ravis de vous présenter les informations de vol les plus récentes. Que vous voyagiez pour affaires ou pour le plaisir, nous sommes là pour vous fournir des vols sûrs et confortables vers de nombreuses destinations passionnantes à travers le monde.
-
-        Notre équipe dévouée travaille sans relâche pour assurer des départs et des arrivées ponctuels. Nous mettons à votre disposition des informations détaillées sur les horaires de vol, les numéros de porte, les retards éventuels et les informations de suivi des bagages. Grâce à notre système de gestion des vols en temps réel, vous pouvez être assuré d'être informé rapidement de tout changement ou mise à jour concernant votre vol.</p></div>
-    <img src="https://cdn.businesstraveller.com/wp-content/uploads/2017/09/%E6%96%B0%E8%81%9E%E7%85%A7.jpg" class ="img3"loading="lazy"></div>
-
+      <p>Bienvenue à notre compagnie aérienne. Nous sommes ravis de vous présenter les informations de vol les plus récentes. Que vous voyagiez pour affaires ou pour le plaisir, nous sommes là pour vous fournir des vols sûrs et confortables vers de nombreuses destinations passionnantes à travers le monde. Notre équipe dévouée travaille sans relâche pour assurer des départs et des arrivées ponctuels. Nous mettons à votre disposition des informations détaillées sur les horaires de vol, les numéros de porte, les retards éventuels et les informations de suivi des bagages. Grâce à notre système de gestion des vols en temps réel, vous pouvez être assuré d'être informé rapidement de tout changement ou mise à jour concernant votre vol.</p>
+    </div>
+  </div>
+  <div class="container-3">
+    <div class="image">
+      <img src="https://cdn.businesstraveller.com/wp-content/uploads/2017/09/%E6%96%B0%E8%81%9E%E7%85%A7.jpg" class="img3" loading="lazy">
+    </div>
+    <div class="text-container2">
+      <p>Nos compagnies de vols offrent une gamme complète de services pour répondre à vos besoins de voyage. Avec un engagement indéfectible envers la sécurité, le confort et la satisfaction des passagers, nous nous efforçons de rendre chaque vol mémorable et agréable. Que vous voyagiez pour affaires ou pour le plaisir, nos compagnies de vols mettent tout en œuvre pour vous offrir une expérience de voyage exceptionnelle. Nous disposons d'une flotte moderne d'avions équipés des dernières technologies, garantissant des vols sûrs et efficaces vers des destinations du monde entier. Nos équipes de professionnels dévoués sont là pour vous accompagner à chaque étape de votre voyage, que ce soit lors de l'enregistrement, à bord de l'avion ou à votre arrivée à destination. Nous nous efforçons de répondre à tous vos besoins et de rendre votre expérience de vol aussi confortable et pratique que possible.</p>
+    </div>
+  </div>
+  
 </div>
-</div>
+<div class="line">
+    <span class="line-text">Caractéristiques et avantages</span>
+  </div>
+  <div class="elementor-element elementor-element-f36c224 e-con-full e-flex e-con" data-id="f36c224" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+		<div class="elementor-element elementor-element-8bc331c e-con-full e-flex e-con" data-id="8bc331c" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-3a48808 elementor-widget elementor-widget-heading" data-id="3a48808" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Features</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f0b7188 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-invisible elementor-widget elementor-widget-icon-list" data-id="f0b7188" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Easy and convenient online booking system for flights</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Accurate flight information, including gate access details</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">User-friendly interface for quick and hassle-free navigation</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Secure payment gateway for safe and secure transactions</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">24/7 customer support for prompt assistance and guidance</span>
+									</li>
+						</ul>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-3724754 e-con-full e-flex e-con" data-id="3724754" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-a7b985b elementor-widget elementor-widget-heading" data-id="a7b985b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Benefits</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f8f294d elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-invisible elementor-widget elementor-widget-icon-list" data-id="f8f294d" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Efficient and convenient access to gate information for selected airline and flight</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">No more confusion and stress trying to find the correct gate</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Easy and user-friendly interface for a hassle-free experience</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Saves time and reduces airport anxiety</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-dot-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Accessible from anywhere, anytime for quick updates and changes</span>
+									</li>
+						</ul>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-721f5b3 e-con-full e-flex e-con" data-id="721f5b3" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-66b4309 elementor-widget elementor-widget-image" data-id="66b4309" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.aci.aero%2Fan-airports-dna-developing-a-vision-internal-storyline-and-service-concepts-for-the-optimal-passenger-experience%2F&psig=AOvVaw2yGaLDxAVZj4CL282BSKhi&ust=1687866485096000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOiIrOfu4P8CFQAAAAAdAAAAABAE" class="attachment-full size-full wp-image-79351" alt="" loading="lazy" />
+                  </div>
+
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+					</div>
+				</div>
 <script>
 const signupButton = document.getElementById("signup-button");
 const loginBox = document.getElementById("login-box");
