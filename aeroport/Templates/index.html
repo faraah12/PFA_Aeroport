@@ -145,7 +145,7 @@ background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
     font-weight: bold;
 }
 
-#Home {
+#Home, .container .left {
     height: calc(100vh - 50px);
     display: flex;
     flex-direction: row;
@@ -158,17 +158,17 @@ background-color: rgb(89, 16, 134); /* Couleur du trait lors du survol */
     width: 100%;
 }
 
-#Home h2 {
+#Home h2, .left h2 {
     font-size: 40px;
     margin-bottom: 20px;
 }
 
-#Home p {
+#Home p, .left p {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-.home-btn{
+.home-btn, .btn1{
   margin-top: 20px;
 }
 .elementor-widget-container {
@@ -469,7 +469,7 @@ transition: opacity 0.3s ease, transform 0.3s ease;
 .feature {
   margin-bottom: 10px;
 }
-.title2, .left h2{
+.title2{
   padding-right: 20px;
   color:#000;
   margin-top: 50px;
@@ -478,7 +478,7 @@ transition: opacity 0.3s ease, transform 0.3s ease;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.text p, .left p{
+.text p{
   font-size: 20px;
   margin-bottom: 60px;
   font-weight: light;
@@ -521,6 +521,15 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+.left {
+  font-size: 18px;
+  font-weight: light;
+  padding-right: 20px;
+  color: rgb(0, 0, 0);
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-right: 70px;
+}
 
 .left h2{
   padding-right: 20px;
@@ -543,7 +552,7 @@ h3 {
 
 .right img {
   width: 100%;
-  max-width: 300px; /* ajustez la largeur maximale de l'image selon vos besoins */
+  max-width: 300px;
 }
 
 
@@ -563,7 +572,7 @@ h3 {
       <li><a href="#" class="menu-item">Contact</a></li>
     </ul>
     <div>
-      <a href="#" class="btn-reservation">Book your flight</a>
+      <a href="/aeroport/Templates/" class="btn-reservation">Book your flight</a>
     </div>
   </header>
 
